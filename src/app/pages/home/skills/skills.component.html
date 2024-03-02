@@ -1,0 +1,257 @@
+<section class="page-section-bottom-0 portfolio">
+  <div class="container">
+    <!-- Portfolio Section Heading-->
+    <h2
+      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+    >
+      TECHNOLOGIES
+    </h2>
+
+    <!-- Icon Divider -->
+    <app-divider [color]="divider"></app-divider>
+
+    <!-- TOP - Tech Grid -->
+    <div
+      id="skills-grid"
+      class="max-width-lg mx-auto p-5 my-5 text-left text-gray border"
+    >
+      <!-- Lang -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Languages </span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="skillsLang">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Frontend -->
+
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Frontend</span>
+          Frameworks & Libraries
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="skillsFrontend">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Backend -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Backend </span>
+          Frameworks & Libraries
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="skillsBackend">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CSS -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> CSS </span>
+          Frameworks & Preprocessors
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="skillsCSS">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Version Control -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Version Control </span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="git">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Testing -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark">
+            Unit Testing / End-To-End Testing
+          </span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="testing">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- XaaS -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark">Cloud / XaaS</span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="XaaS">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CMS -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> CMS </span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="wordpress">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DB -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Database </span>
+          Management Systems
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="skillsDB">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- REST -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Architectures / Techniques</span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="techniques">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Package -->
+      <div class="mb-5">
+        <h3 class="h4">
+          <span class="text-custom-dark"> Package Managers</span>
+        </h3>
+        <ul class="p-0 mt-3 pic-grid d-flex">
+          <li>
+            <ng-template ngFor let-skill [ngForOf]="packages">
+              <img
+                class="mr-3 mb-3"
+                [src]="skill[1]"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                [title]="skill[0]"
+                [alt]="skill[0]"
+              />
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

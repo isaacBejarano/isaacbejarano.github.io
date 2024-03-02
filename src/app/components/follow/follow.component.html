@@ -1,0 +1,27 @@
+<div class="p-5">
+  <h4 class="text-uppercase mb-4">follow me</h4>
+
+  <!-- linked in -->
+  <a
+    rel="nofollow noreferrer"
+    [href]="follow.link1"
+    target="_blank"
+    (click)="openLink()"
+    class="btn btn-outline-light btn-social mx-1"
+  >
+    <fa-icon [icon]="faLinkedin"></fa-icon>
+    <span class="sr-only"> Clik to Scroll to the top page </span>
+  </a>
+
+  <!-- github -->
+  <a
+    rel="nofollow noreferrer"
+    [href]="follow.link2"
+    target="_blank"
+    (click)="openLink()"
+    class="btn btn-outline-light btn-social mx-1"
+  >
+    <fa-icon [icon]="faGithub"></fa-icon>
+    <span class="sr-only"> Clik to Scroll to the top page </span>
+  </a>
+</div>

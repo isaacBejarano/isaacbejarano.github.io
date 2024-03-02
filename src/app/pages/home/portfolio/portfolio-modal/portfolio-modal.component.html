@@ -1,0 +1,55 @@
+<!-- Portfolio Modal 1 -->
+<div
+  class="portfolio-modal modal fade"
+  [id]="modal.id"
+  tabindex="-1"
+  role="dialog"
+  [attr.aria-labelledby]="modal.label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <button
+        class="close text-custom"
+        type="button"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">
+          <fa-icon [icon]="faTimes"></fa-icon>
+        </span>
+      </button>
+      <div class="modal-body text-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <!-- Portfolio Modal - Title-->
+              <h2
+                class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                [id]="modal.label"
+              >
+                {{ modal.title }}
+              </h2>
+              <!-- Icon Divider-->
+              <app-divider [color]="divider"></app-divider>
+
+              <!-- Portfolio Modal - Image-->
+              <img
+                class="border border-secondary img-fluid-override rounded mb-5"
+                src="assets/img/{{ modal.src }}"
+                [alt]="modal.alt"
+              />
+              <!-- type ABCDE - Portfolio Modal - Text-->
+              <ng-content></ng-content>
+
+              <button class="btn btn-outline-dark" data-dismiss="modal">
+                <fa-icon [icon]="faTimes"></fa-icon>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
