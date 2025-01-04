@@ -1,0 +1,71 @@
+/**********
+debug
+***********/
+.red {
+	outline: 1px solid red;
+}
+
+/**********
+variables
+***********/
+:root {
+	--color-B: #000000;
+	--color-W: #FFFFFF;
+	--color-red: #CC3333;
+	/* mobile / tablet / desktop -> vw from mockups */
+	--vw-mobile: 450px;
+	--vw-tablet: 806px;
+	--vw-desktop: 1920px;
+	--vh-desktop: 1080px;
+}
+
+/**********
+globals
+***********/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	:where(*)::before,
+	:where(*)::after {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	/* vs. scrollbar-x affecting viewport vw */
+	min-width: 100vw;
+	overflow-x: hidden;
+}
+
+/**********
+layout
+***********/
+:where(*):has(> .container) {
+	width: 100vw;
+
+	> .container {
+		max-width: var(--vh-desktop);
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/**********
+components
+***********/
+.hero {
+	text-align: center;
+	padding: 1rem;
+
+	.hero-attr {
+		text-align: right;
+		display: block;
+	}
+}
+
+/**********
+index.html
+***********/
