@@ -2,70 +2,184 @@
 debug
 ***********/
 .red {
-	outline: 1px solid red;
+  outline: 1px solid red;
 }
 
 /**********
 variables
 ***********/
 :root {
-	--color-B: #000000;
-	--color-W: #FFFFFF;
-	--color-red: #CC3333;
-	/* mobile / tablet / desktop -> vw from mockups */
-	--vw-mobile: 450px;
-	--vw-tablet: 806px;
-	--vw-desktop: 1920px;
-	--vh-desktop: 1080px;
+  --color-B: rgb(0, 0, 0);
+  --color-W: rgb(255, 255, 255);
+  --color-G: rgb(64, 195, 130);
+  --color-bg-page: rgb(242, 242, 230);
+  --color-bg-hero-attr: rgba(242, 242, 230, 0.7);
+  /* mobile / tablet / desktop -> vw from mockups */
+  --vw-mobile: 450px;
+  --vw-tablet: 806px;
+  --vw-desktop: 1920px;
+  /* desktop -> max w from intructions PDF */
+  --vh-desktop: 1140px;
 }
 
 /**********
 globals
 ***********/
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-	:where(*)::before,
-	:where(*)::after {
-		box-sizing: border-box;
-	}
+  :where(*)::before,
+  :where(*)::after {
+    box-sizing: border-box;
+  }
+
+  font-family: sans-serif;
 }
 
 body {
-	/* vs. scrollbar-x affecting viewport vw */
-	min-width: 100vw;
-	overflow-x: hidden;
+  /* vs. scrollbar-x affecting viewport vw */
+  min-width: 100vw;
+  overflow-x: hidden;
+  color: var(--color-B);
+
+  > header {
+    background-color: var(--color-W);
+  }
+
+  > footer {
+    color: var(--color-W);
+    background-color: var(--color-B);
+  }
+
+  > main {
+    background-color: var(--color-bg-page);
+  }
+
+  :where(ol, ul) {
+    list-style-type: none;
+  }
+
+  [href] {
+    text-decoration: none;
+    color: var(--color-B);
+
+    &:visited {
+      color: var(--color-B);
+    }
+  }
 }
 
 /**********
 layout
 ***********/
-:where(*):has(> .container) {
-	width: 100vw;
+.w-full {
+  width: 100%;
+  padding: 1rem;
 
-	> .container {
-		max-width: var(--vh-desktop);
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  @media only screen and (min-width: 1920px) {
+    padding: 2rem 3.5rem;
+  }
+}
+
+.w-container {
+  max-width: var(--vh-desktop);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
 }
 
 /**********
+text
+***********/
+/**********
 components
 ***********/
-.hero {
-	text-align: center;
-	padding: 1rem;
+.topmenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "logo logo"
+    "menu menu"
+  ;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-	.hero-attr {
-		text-align: right;
-		display: block;
-	}
+  > [href] {
+    grid-area: logo;
+    justify-self: center;
+  }
+
+  > ul {
+    grid-area: menu;
+    justify-self: center;
+    text-align: center;
+
+    > li {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo menu";
+
+    > [href] {
+      justify-self: start;
+    }
+
+    > ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      li:last-of-type {
+        border: 1px solid var(--color-B);
+        border-width: 0 0 0 1px;
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  padding: 1rem;
+  min-height: 536px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-W);
+
+  > .hero-title {
+    margin-bottom: 5rem;
+  }
+
+  > .hero-attr {
+    text-align: right;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--color-B);
+    background-color: var(--color-bg-hero-attr);
+    padding: 0.51rem;
+  }
 }
 
 /**********
 index.html
 ***********/
+.index {
+  .hero {
+    background-image: url("../../src/img/hero-image-home.jpg");
+    background-size: cover;
+    background-position-y: 100%;
+    background-position-x: 50%;
+  }
+}
