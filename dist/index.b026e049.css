@@ -151,6 +151,84 @@ body {
   }
 }
 
+body > footer {
+  grid-template-areas: "div"
+                       "ul"
+                       "ol";
+  place-items: center;
+  line-height: 2;
+  display: grid;
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important;
+
+  & [href] {
+    color: var(--color-W);
+  }
+
+  & > div {
+    grid-area: div;
+
+    & > img {
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
+    & p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  & > ul {
+    text-align: center;
+    grid-area: ul;
+
+    & li {
+      display: inline-block;
+    }
+  }
+
+  & > ol {
+    text-align: center;
+    grid-area: ol;
+  }
+
+  @media only screen and (width >= 1920px) {
+    & {
+      grid-template-areas: "div ul"
+                           "div ol";
+    }
+
+    & > div {
+      justify-self: start;
+
+      & > img {
+        margin: 0 0 1.5rem;
+      }
+    }
+
+    & > :where(ul, ol) {
+      justify-self: end;
+      display: flex;
+    }
+
+    & ul li {
+      margin-left: .5rem;
+    }
+
+    & ol {
+      & > :where(li:first-child, li:nth-child(2)) a {
+        margin-right: 1rem;
+      }
+
+      & > :where(li:nth-child(2), li:nth-child(3)) a {
+        border: 1px solid var(--color-W);
+        border-width: 0 0 0 1px;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
 .index {
   & .hero {
     background-image: url("hero-image-home.fc8eca25.jpg");

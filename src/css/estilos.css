@@ -94,6 +94,7 @@ layout
 /**********
 text
 ***********/
+/* TODO: font sizing */
 /**********
 components
 ***********/
@@ -169,6 +170,87 @@ components
     color: var(--color-B);
     background-color: var(--color-bg-hero-attr);
     padding: 0.51rem;
+  }
+}
+
+body > footer {
+  display: grid;
+  grid-template-areas: "div" "ul" "ol";
+  justify-items: center;
+  align-items: center;
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important;
+
+  [href] {
+    color: var(--color-W);
+  }
+
+  line-height: 2;
+
+  > div {
+    grid-area: div;
+
+    > img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  > ul {
+    grid-area: ul;
+    text-align: center;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  > ol {
+    grid-area: ol;
+    text-align: center;
+    /* margin-top: 1rem; */
+  }
+
+  @media only screen and (min-width: 1920px) {
+    grid-template-areas:
+      "div ul"
+      "div ol"
+    ;
+
+    > div {
+      justify-self: start;
+
+      > img {
+        margin: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    > :where(ul, ol) {
+      justify-self: end;
+      display: flex;
+    }
+
+    ul li {
+      margin-left: 0.5rem;
+    }
+
+    ol {
+      > :where(li:nth-child(1), li:nth-child(2)) a {
+        margin-right: 1rem;
+      }
+
+      > :where(li:nth-child(2), li:nth-child(3)) a {
+        border: 1px solid var(--color-W);
+        border-width: 0 0 0 1px;
+        padding-left: 1rem;
+      }
+    }
   }
 }
 
