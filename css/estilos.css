@@ -294,7 +294,7 @@ index.html
 ***********/
 .index {
   .hero {
-    background-image: url("../../src/img/hero-image-home.jpg");
+    background-image: url("../img/hero-image-home.jpg");
     background-size: cover;
     background-position-y: 100%;
     background-position-x: 50%;

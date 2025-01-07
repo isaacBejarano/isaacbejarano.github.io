@@ -3,16 +3,16 @@
   "version": "3.0.0",
   "description": "HTML-CSS-P3",
   "source": [
-    "src/*",
-    "src/css/*",
-    "src/img/*",
-    "src/validations/*"
+    "*.html",
+    "css/*",
+    "img/*",
+    "validations/*"
   ],
   "author": "Isaac Bejarano",
   "license": "ISC",
   "scripts": {
     "parcel:dev": "parcel",
-    "parcel:dist": "parcel build --dist-dir docs --public-url ./ --no-content-hash --no-optimize --no-source-maps --no-cache",
+    "parcel:dist": "parcel build --dist-dir public --public-url ./ --no-content-hash --no-optimize --no-source-maps --no-cache",
     "clean": "rimraf dist docs .parcel-cache",
     "start": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:dist"
