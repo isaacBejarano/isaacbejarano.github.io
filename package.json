@@ -2,19 +2,25 @@
   "name": "p3",
   "version": "3.0.0",
   "description": "HTML-CSS-P3",
-  "source": "src/index.html",
+  "source": [
+    "src/*",
+    "src/css/*",
+    "src/img/*",
+    "src/validations/*"
+  ],
   "author": "Isaac Bejarano",
   "license": "ISC",
   "scripts": {
     "parcel:dev": "parcel",
-    "parcel:dist": "parcel build",
-    "clean": "rimraf dist .parcel-cache",
+    "parcel:dist": "parcel build --dist-dir docs --public-url ./ --no-content-hash --no-optimize --no-source-maps --no-cache",
+    "clean": "rimraf dist docs .parcel-cache",
     "start": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:dist"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "parcel": "^2.13.3",
+    "posthtml-include": "^2.0.1",
     "rimraf": "^6.0.1",
     "svgo": "^3.3.2"
   }
