@@ -255,6 +255,7 @@ body > footer {
 }
 
 /* TODO: enlaces <a> con forma de botón */
+/* git hub pages */
 :where(.btn, [type="submit"]) {
   border: 1px solid var(--color-B);
   padding: 0.5rem 1rem;
