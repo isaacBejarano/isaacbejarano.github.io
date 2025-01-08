@@ -16,7 +16,8 @@
   <header class="w-full">
     <nav class="topmenu">
       <a href="index.html">
-        <img src="img/logotip.svg" alt="logotipo del sitio con enlace a la página de inicio." />
+        <img src="img/logotip.svg" width="230" height="35"
+             alt="logotipo del sitio con enlace a la página de inicio." />
       </a>
       <ol>
         <li><a href="tema-del-mes.html">TEMA DEL MES</a></li>
@@ -29,64 +30,121 @@
     <article>
       <header class="hero">
         <h1 class="hero-title"> Naturae Hub </h1>
-        <p> Un espacio para los defensores del medio ambiente </p>
-        <footer class="img-attr"> <small> Foto de Qingbao Meng en Unsplash </small> </footer>
+        <p class="hero-legend"> Un espacio para los defensores del medio ambiente </p>
+        <footer class="img-attr">
+          <p>
+            <small>
+              Foto de
+              <a href="https://unsplash.com/@ideasboom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 target="_blank" referrerpolicy="no-referrer">
+                Qingbao Meng
+              </a>
+              en
+              <a href="https://unsplash.com/photos/birds-eye-view-photograph-of-green-mountains-01_igFr7hd4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 target="_blank" referrerpolicy="no-referrer">
+                Unsplash
+              </a>
+            </small>
+          </p>
+        </footer>
       </header>
 
       <section class="w-container">
-        <h2>H2</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum quos et laboriosam
-          commodi quae, fugiat voluptate eius impedit vitae corrupti dolore quasi molestias tempora
-          iure ipsa quaerat possimus beatae deserunt!
-        </p>
-        <form action="#">
-          <fieldset>
-            <label for="form-name">XXX</label>
-            <input type="text" id="form-name" name="form-name">
-          </fieldset>
+        <h2>¿Qué es Naturae Hub?</h2>
 
-          <button type="submit">XXX</button>
+        <p>
+          <strong> Naturae Hub </strong>
+          es un espacio digital donde la belleza y el poder del entorno natural
+          se quieren encontrar con la acción, el aprendizaje y la conciencia ambiental.
+        </p>
+        <p>
+          Inspirar y educar es lo que persigue
+          <b> Naturae Hub </b>
+          , porque las personas deben vivir
+          en consonancia con la naturaleza.
+        </p>
+        <p>
+          Sé parte del cambio,
+          <strong> suscríbete a nuestra <i lang="en"> newsletter </i>. </strong>
+        </p>
+
+        <form action="#" method="post">
+          <ul class="form-fields">
+            <li>
+              <label for="f-name">Nombre</label>
+              <input type="text" id="f-name" name="form-name" required>
+            </li>
+            <li>
+              <label for="f-email">Correo electrónico</label>
+              <input type="email" id="f-email" name="form-email" required>
+            </li>
+          </ul>
+
+          <p>
+            <small>
+              Antes de enviar tus datos, consulta nuestra
+              <a href="javascript:void(0)">política de privacidad</a>.
+            </small>
+          </p>
+
+          <ul class="form-fields">
+            <li>
+              <input type="checkbox" id="f-privacy" name="form-privacy" value="accepted">
+              <label for="f-privacy">He leído y acepto la política de privacidad</label>
+            </li>
+          </ul>
+
+          <button type="submit">Suscríbeme</button>
         </form>
       </section>
 
       <section class="w-container">
-        <h2>H2</h2>
+        <h2>Historias de cambio</h2>
+
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum quos et laboriosam
-          commodi quae, fugiat voluptate eius impedit vitae corrupti dolore quasi molestias tempora
-          iure ipsa quaerat possimus beatae deserunt!
-          <a href="">lorem lorem</a>
+          Historias de personas y comunidades que con sus iniciativas están marcando la
+          diferencia en la protección y conservación del medio ambiente. Si conoces otras
+          historias o eres su protagonista,
+          <a href="mailto:historias@naturaehub.org">cuéntanoslo</a>.
         </p>
 
-        <a href="#" class="btn">Link as Btn</a>
-
-        <ul>
-          <li class="card red">
+        <ul class="card-list col-348">
+          <li class="card">
             <article class="card-content">
-              <h2>
-                <a href="">YYY</a>
-              </h2>
-              <p>xxx</p>
-              <a href="" class="btn">xxx</a>
+              <h3>
+                <a href="javascript:void(0)">Creando bosques urbanos</a>
+              </h3>
+              <p>
+                Un grupo de estudiantes decidió plantar árboles en terrenos descuidados de su
+                ciudad; querían transformar áreas grises e insalubres en pulmones verdes…
+              </p>
+              <a href="javascript:void(0)" class="btn">Saber más</a>
             </article>
           </li>
-          <li class="card red">
+          <li class="card">
             <article class="card-content">
-              <h2>
-                <a href="">YYY</a>
-              </h2>
-              <p>xxx</p>
-              <a href="" class="btn">xxx</a>
+              <h3>
+                <a href="javascript:void(0)">Un refugio para las abejas</a>
+              </h3>
+              <p>
+                Los vecinos de Vallrosada han decidido enfrentarse a la disminución de las abejas.
+                Han recuperado terrenos baldíos, los han plantado de flores y han construido una
+                granja de apicultura comunitaria…
+              </p>
+              <a href="javascript:void(0)" class="btn">Saber más</a>
             </article>
           </li>
-          <li class="card red">
+          <li class="card">
             <article class="card-content">
-              <h2>
-                <a href="">YYY</a>
-              </h2>
-              <p>xxx</p>
-              <a href="" class="btn">xxx</a>
+              <h3>
+                <a href="javascript:void(0)">Convertir un río en un oasis de vida</a>
+              </h3>
+              <p>
+                Su río había sido devastado por la contaminación. La determinación de todo el
+                pueblo ha conseguido rescatarlo; hoy es un ejemplo de cómo es posible recuperar
+                un ecosistema…
+              </p>
+              <a href="javascript:void(0)" class="btn">Saber más</a>
             </article>
           </li>
         </ul>
@@ -96,7 +154,7 @@
 
   <footer class="w-full">
     <div>
-      <img src="img/logotip-n.svg" alt="logotipo del sitio." />
+      <img src="img/logotip-n.svg" width="138" height="21" alt="logotipo del sitio." />
       <p>
         2024-2025. Isaac Bejarano Fernández
       </p>
