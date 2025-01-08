@@ -1,8 +1,29 @@
-/**********
-debug
-***********/
-.red {
-  outline: 1px solid red;
+@font-face {
+  font-family: 'Alegreya';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Alegreya-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-weight: 400;
+  font-style: oblique;
+  src: url('../fonts/Alegreya-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/Alegreya-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-weight: 700;
+  font-style: oblique;
+  src: url('../fonts/Alegreya-BoldItalic.ttf') format('truetype');
 }
 
 /**********
@@ -36,39 +57,58 @@ globals
   }
 
   font-family: sans-serif;
+  /* font-family: ver; */
 }
 
 body {
+  font-family: "Alegreya", sans-serif;
+  font-weight: 400;
   /* vs. scrollbar-x affecting viewport vw */
-  min-width: 100vw;
-  overflow-x: hidden;
+  /* min-width: 100vw; */
+  /* overflow-x: hidden; */
   color: var(--color-B);
 
   > header {
     background-color: var(--color-W);
   }
+}
 
-  > footer {
-    color: var(--color-W);
-    background-color: var(--color-B);
+main {
+  background-color: var(--color-bg-page);
+}
+
+:where(ol, ul) {
+  list-style-type: none;
+}
+
+[href] {
+  text-decoration: none;
+  color: var(--color-B);
+  outline: none;
+
+  &:not(.btn):hover,
+  &:not(.btn):focus {
+    color: var(--color-G);
   }
 
-  > main {
-    background-color: var(--color-bg-page);
-  }
-
-  :where(ol, ul) {
-    list-style-type: none;
-  }
-
-  [href] {
-    text-decoration: none;
+  &:visited {
     color: var(--color-B);
-
-    &:visited {
-      color: var(--color-B);
-    }
   }
+}
+
+p [href] {
+  border: 1px dotted var(--color-B);
+  border-width: 0 0 1px 0;
+
+  &:not(.btn):hover,
+  &:not(.btn):focus {
+    border-style: solid;
+    color: var(--color-B);
+  }
+}
+
+abbr {
+  cursor: help;
 }
 
 /**********
@@ -91,9 +131,6 @@ layout
   padding: 1rem;
 }
 
-/**********
-text
-***********/
 /* TODO: font sizing */
 /**********
 components
@@ -114,7 +151,7 @@ components
     justify-self: center;
   }
 
-  > ul {
+  > ol {
     grid-area: menu;
     justify-self: center;
     text-align: center;
@@ -134,7 +171,7 @@ components
       justify-self: start;
     }
 
-    > ul {
+    > ol {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -161,16 +198,6 @@ components
   > .hero-title {
     margin-bottom: 5rem;
   }
-
-  > .hero-attr {
-    text-align: right;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    color: var(--color-B);
-    background-color: var(--color-bg-hero-attr);
-    padding: 0.51rem;
-  }
 }
 
 body > footer {
@@ -180,6 +207,8 @@ body > footer {
   align-items: center;
   padding-top: 2rem !important;
   padding-bottom: 4rem !important;
+  color: var(--color-W);
+  background-color: var(--color-B);
 
   [href] {
     color: var(--color-W);
@@ -207,13 +236,16 @@ body > footer {
 
     li {
       display: inline-block;
+
+      :where(:hover, :focus) {
+        opacity: 0.7;
+      }
     }
   }
 
   > ol {
     grid-area: ol;
     text-align: center;
-    /* margin-top: 1rem; */
   }
 
   @media only screen and (min-width: 1920px) {
@@ -241,24 +273,33 @@ body > footer {
     }
 
     ol {
-      > :where(li:nth-child(1), li:nth-child(2)) a {
-        margin-right: 1rem;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
 
-      > :where(li:nth-child(2), li:nth-child(3)) a {
+      li {
+        padding: 0 1rem;
         border: 1px solid var(--color-W);
         border-width: 0 0 0 1px;
-        padding-left: 1rem;
+      }
+
+      li:first-of-type {
+        border: none;
       }
     }
   }
 }
 
-/* TODO: enlaces <a> con forma de botón */
-/* git hub pages */
 :where(.btn, [type="submit"]) {
+  outline: none;
   border: 1px solid var(--color-B);
+  background-color: transparent;
   padding: 0.5rem 1rem;
+
+  &:where(:focus, :hover) {
+    border: 1px solid var(--color-G);
+  }
 }
 
 form {
@@ -275,18 +316,75 @@ form {
     width: 100%;
     min-height: 2rem;
     border: none;
-  }
+    outline: none;
 
-  /* background-color: var(--color-bg-page); */
-  /* [type="submit"] {} */
+    &:focus {
+      border: 1px solid var(--color-B);
+    }
+  }
 }
 
 .card {
-  background-color: var(--color-W);
+  .card-img {
+    position: relative;
 
-  .btn {
-    /* background-color: var(--color-W); */
+    img {
+      width: 100%;
+    }
   }
+
+  .card-content {
+    background-color: var(--color-W);
+  }
+}
+
+.pagination {
+  max-width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+
+  > li {
+    height: 25px;
+    width: 25px;
+    padding: 0.5rem;
+    background-color: var(--color-W);
+    border: 1px solid var(--color-B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:not(:has(.active)):where(:focus-within, :hover) {
+      background-color: var(--color-G);
+      cursor: pointer;
+      border-color: var(--color-G);
+
+      > [href] {
+        color: var(--color-W);
+        border-color: inherit;
+      }
+    }
+
+    &.active {
+      background-color: var(--color-G);
+      border-color: var(--color-G);
+
+      > [href] {
+        color: var(--color-W);
+      }
+    }
+  }
+}
+
+.img-attr {
+  text-align: right;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: var(--color-B);
+  background-color: var(--color-bg-hero-attr);
+  padding: 0.5rem;
 }
 
 /**********
@@ -299,4 +397,75 @@ index.html
     background-position-y: 100%;
     background-position-x: 50%;
   }
+}
+
+.tema {
+  menu ol {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li::before {
+      content: "·";
+      font-weight: bolder;
+      font-size: x-large;
+      color: var(--color-G);
+      margin-left: 0.5rem;
+    }
+
+    > li:first-of-type::before {
+      content: "";
+    }
+
+    > li > [href]:focus,
+    > li > [href]:hover {
+      color: var(--color-G)
+    }
+
+    @media only screen and (min-width: 1920px) {
+      display: block;
+
+      > li::before {
+        content: "";
+      }
+    }
+  }
+
+  main > *:has([datetime]) {
+    [datetime] {
+      padding: 0.5rem;
+      padding-bottom: 0.25rem;
+      color: var(--color-W);
+      background-color: var(--color-G);
+    }
+  }
+}
+
+.blog {
+  ul {
+    display: grid;
+    grid-gap: 2rem;
+    justify-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  }
+}
+
+.post {
+  menu ol {
+    display: flex;
+    flex-wrap: wrap;
+
+    li:not(:last-of-type) {
+      &::after {
+        content: ">";
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+/**********
+debug
+***********/
+.red {
+  outline: 1px solid red;
 }
