@@ -96,7 +96,7 @@ main {
   }
 }
 
-p {
+:where(p, figcaption) {
   line-height: 1.5;
 
   [href] {
@@ -142,20 +142,17 @@ components
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    "logo"
-    "menu"
-  ;
+  grid-template-areas: "tm-logo" "tm-menu";
   padding-top: 1rem;
   padding-bottom: 1rem;
 
   > [href] {
-    grid-area: logo;
+    grid-area: tm-logo;
     justify-self: center;
   }
 
   > ol {
-    grid-area: menu;
+    grid-area: tm-menu;
     justify-self: center;
     text-align: center;
 
@@ -168,7 +165,9 @@ components
 
   @media only screen and (min-width: 1920px) {
     grid-template-rows: 1fr;
-    grid-template-areas: "logo menu";
+    grid-template-areas: "tm-logo tm-menu";
+    padding-top: 0;
+    padding-bottom: 0;
 
     > [href] {
       justify-self: start;
@@ -231,8 +230,9 @@ components
 }
 
 body > footer {
+  position: sticky;
   display: grid;
-  grid-template-areas: "div" "ul" "ol";
+  grid-template-areas: "f-div" "f-ul" "f-ol";
   justify-items: center;
   align-items: center;
   padding-top: 2rem !important;
@@ -246,7 +246,7 @@ body > footer {
   }
 
   > div {
-    grid-area: div;
+    grid-area: f-div;
 
     > img {
       display: block;
@@ -260,7 +260,7 @@ body > footer {
   }
 
   > ul {
-    grid-area: ul;
+    grid-area: f-ul;
     text-align: center;
     margin-bottom: 0.5rem;
 
@@ -274,15 +274,15 @@ body > footer {
   }
 
   > ol {
-    grid-area: ol;
+    grid-area: f-ol;
     text-align: center;
     line-height: 1.6;
   }
 
   @media only screen and (min-width: 1920px) {
     grid-template-areas:
-      "div ul"
-      "div ol"
+      "f-div f-ul"
+      "f-div f-ol"
     ;
 
     > div {
@@ -558,48 +558,177 @@ index.html
 }
 
 .tema {
-  menu ol {
-    display: flex;
-    flex-wrap: wrap;
+  main > article {
+    > hgroup h1 {
+      max-width: 60%;
+      margin: 0 auto;
+      padding: 1rem 0 2.5rem;
+      text-align: center;
 
-    > li::before {
-      content: "·";
-      font-weight: bolder;
-      font-size: x-large;
-      color: var(--color-G);
-      margin-left: 0.5rem;
+      @media only screen and (min-width: 806px) {
+        max-width: 100%;
+      }
+
+      @media only screen and (min-width: 1920px) {
+        font-size: 4rem;
+      }
+
+      [datetime] {
+        padding: 0 1rem;
+        color: var(--color-W);
+        background-color: var(--color-G);
+      }
     }
 
-    > li:first-of-type::before {
-      content: "";
+    > hgroup h2 {
+      text-align: center;
+      font-size: xx-large;
+      margin: 0 auto 2.5rem;
+
+      @media only screen and (min-width: 1920px) {
+        font-size: 2.5rem;
+      }
     }
 
-    > li > [href]:focus,
-    > li > [href]:hover {
-      color: var(--color-G)
+    > nav ol {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: smaller;
+      font-weight: 700;
+
+      > li::before {
+        content: "·";
+        font-size: large;
+        color: var(--color-G);
+        margin-left: 0.2rem;
+      }
+
+      > li:first-of-type::before {
+        content: "";
+      }
+
+      > li > [href]:focus,
+      > li > [href]:hover {
+        color: var(--color-G)
+      }
+
+      @media only screen and (min-width: 806px) {
+        font-size: medium;
+      }
+
+      @media only screen and (min-width: 1920px) {
+        display: block;
+        font-size: 0.9rem;
+
+        > li::before {
+          content: "";
+        }
+      }
+    }
+
+    > ol.card-list {
+      padding: 2rem 0 4rem;
+
+      > li::before {
+        content: "#" counter(list-item);
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .card {
+        .card-title {
+          font-size: 1.8rem;
+          line-height: 1;
+
+          + p {
+            margin-bottom: 0.8rem;
+          }
+        }
+
+        .card-img figure {
+          img {
+            padding: 1rem;
+            background-color: var(--color-W);
+          }
+
+          figcaption {
+            font-size: 0.7rem;
+          }
+        }
+
+        .card-content {
+          padding: 0.8rem 0;
+          background-color: transparent;
+
+          > p > [href].br {
+            display: inline-block;
+            margin-top: 0.8rem;
+          }
+        }
+      }
     }
 
     @media only screen and (min-width: 1920px) {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-areas:
+        "t-hgroup t-hgroup"
+        "t-nav t-list"
+      ;
 
-      > li::before {
-        content: "";
+      > hgroup {
+        grid-area: t-hgroup;
       }
-    }
-  }
 
-  main > *:has([datetime]) {
-    [datetime] {
-      padding: 0.5rem;
-      padding-bottom: 0.25rem;
-      color: var(--color-W);
-      background-color: var(--color-G);
+      > nav {
+        grid-area: t-nav;
+      }
+
+      > ol.card-list {
+        grid-area: t-list;
+
+        > li {
+          position: relative;
+          margin-bottom: 1.5rem;
+
+          &::before {
+            position: absolute;
+            margin-top: -0.4rem;
+          }
+
+          .card {
+            display: grid;
+            grid-template-columns: 1fr 408px 2fr;
+            grid-template-areas:
+              "c-title c-img c-content c-content"
+            ;
+            align-items: start;
+
+            hgroup {
+              grid-area: c-title;
+              padding-top: 3rem;
+            }
+
+            .card-img {
+              grid-area: c-img;
+            }
+
+            .card-content {
+              grid-area: c-content;
+              padding: 0 0 0 3rem;
+              margin-top: -1rem;
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 .post {
-  menu ol {
+  main nav ol {
     display: flex;
     flex-wrap: wrap;
 
@@ -610,4 +739,9 @@ index.html
       }
     }
   }
+}
+
+/* DEBUG */
+.red {
+  outline: 1px solid red;
 }
