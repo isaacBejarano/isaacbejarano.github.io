@@ -230,8 +230,8 @@ body > footer {
   background-color: #000;
   background-color: var(--color-B);
   grid-template-areas: "f-div"
-                       "f-ul"
-                       "f-ol";
+                       "f-ul1"
+                       "f-ul2";
   place-items: center;
   font-size: smaller;
   display: grid;
@@ -257,30 +257,30 @@ body > footer {
   margin-bottom: 1rem;
 }
 
-:is(body > footer) > ul {
+:is(body > footer) > ul:first-of-type {
   text-align: center;
-  grid-area: f-ul;
+  grid-area: f-ul1;
   margin-bottom: .5rem;
 }
 
-:is(:is(body > footer) > ul) li {
+:is(:is(body > footer) > ul:first-of-type) li {
   display: inline-block;
 }
 
-:is(:is(:is(body > footer) > ul) li) :where(:hover, :focus) {
+:is(:is(:is(body > footer) > ul:first-of-type) li) :where(:hover, :focus) {
   opacity: .7;
 }
 
-:is(body > footer) > ol {
+:is(body > footer) > ul:last-of-type {
   text-align: center;
-  grid-area: f-ol;
+  grid-area: f-ul2;
   line-height: 1.6;
 }
 
 @media only screen and (width >= 1920px) {
   body > footer {
-    grid-template-areas: "f-div f-ul"
-                         "f-div f-ol";
+    grid-template-areas: "f-div f-ul1"
+                         "f-div f-ul2";
   }
 
   :is(body > footer) > div {
@@ -291,35 +291,35 @@ body > footer {
     margin: 0 0 1.5rem;
   }
 
-  :is(body > footer) > :where(ul, ol) {
+  :is(body > footer) > ul {
     justify-self: end;
     display: flex;
   }
 
-  :is(body > footer) ul li {
+  :is(body > footer) > ul:first-of-type li {
     margin-left: .5rem;
   }
 
-  :is(body > footer) ol {
+  :is(body > footer) > ul:last-of-type {
     justify-content: center;
     align-items: center;
     line-height: 1;
     display: flex;
   }
 
-  :is(:is(body > footer) ol) li {
+  :is(:is(body > footer) > ul:last-of-type) li {
     border: 1px solid #fff;
     border: 1px solid var(--color-W);
     border-width: 0 0 0 1px;
     padding: 0 1rem;
   }
 
-  :is(:is(body > footer) ol) li:first-of-type {
+  :is(:is(body > footer) > ul:last-of-type) li:first-of-type {
     border: none;
   }
 
-  :is(:is(body > footer) ol) li:last-of-type {
-    padding: 0;
+  :is(:is(body > footer) > ul:last-of-type) li:last-of-type {
+    padding: 0 0 0 1rem;
   }
 }
 
@@ -366,7 +366,6 @@ form .form-fields {
 }
 
 :is(form .form-fields) li:has([name][type="checkbox"]) > [name] {
-  background-color: pink;
   padding: 1rem;
   display: inline-block;
 }

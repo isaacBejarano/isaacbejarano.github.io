@@ -235,7 +235,7 @@ components
 body > footer {
   position: sticky;
   display: grid;
-  grid-template-areas: "f-div" "f-ul" "f-ol";
+  grid-template-areas: "f-div" "f-ul1" "f-ul2";
   justify-items: center;
   align-items: center;
   padding-top: 2rem !important;
@@ -262,8 +262,8 @@ body > footer {
     }
   }
 
-  > ul {
-    grid-area: f-ul;
+  > ul:first-of-type {
+    grid-area: f-ul1;
     text-align: center;
     margin-bottom: 0.5rem;
 
@@ -276,16 +276,16 @@ body > footer {
     }
   }
 
-  > ol {
-    grid-area: f-ol;
+  > ul:last-of-type {
+    grid-area: f-ul2;
     text-align: center;
     line-height: 1.6;
   }
 
   @media only screen and (min-width: 1920px) {
     grid-template-areas:
-      "f-div f-ul"
-      "f-div f-ol"
+      "f-div f-ul1"
+      "f-div f-ul2"
     ;
 
     > div {
@@ -297,16 +297,16 @@ body > footer {
       }
     }
 
-    > :where(ul, ol) {
+    > ul {
       justify-self: end;
       display: flex;
     }
 
-    ul li {
+    > ul:first-of-type li {
       margin-left: 0.5rem;
     }
 
-    ol {
+    > ul:last-of-type {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -324,6 +324,7 @@ body > footer {
 
       li:last-of-type {
         padding: 0;
+        padding-left: 1rem;
       }
     }
   }
@@ -371,7 +372,6 @@ form {
     li:has([name][type="checkbox"]) > [name] {
       display: inline-block;
       padding: 1rem;
-      background-color: pink;
 
       &:focus {
         outline: 1px solid var(--color-B);
