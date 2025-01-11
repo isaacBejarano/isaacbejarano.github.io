@@ -85,7 +85,10 @@ main {
   text-decoration: none;
   color: var(--color-B);
   outline: none;
-  padding-bottom: 3px;
+
+  &:not(.btn) {
+    padding-bottom: 3px;
+  }
 
   &:not(.btn):hover,
   &:not(.btn):focus {

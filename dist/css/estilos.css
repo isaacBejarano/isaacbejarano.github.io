@@ -77,8 +77,11 @@ main {
 [href] {
   color: var(--color-B);
   outline: none;
-  padding-bottom: 3px;
   text-decoration: none;
+}
+
+[href]:not(.btn) {
+  padding-bottom: 3px;
 }
 
 [href]:not(.btn):hover, [href]:not(.btn):focus {
