@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 
+<!-- TODO: img-attr + p > [href] underline dotted bot sizing -->
+
 <body class="post">
   <header class="w-full">
     <nav class="topmenu">
@@ -27,25 +29,211 @@
   </header>
 
   <main>
-    <nav>
-      <ol>
-        <li><a href="">XXX</a></li>
-        <li><a href="">XXX</a></li>
-        <li>XXX</li>
+    <nav class="w-container">
+      <ol class="breadcrumb">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a>El impacto de la <i lang="en"> fast fashion </i> en el planeta</a></li>
       </ol>
     </nav>
 
-    <header class="hero">
-      <h1>XXX</h1>
-      <p>
-        ESCRITO POR... XXX
-      </p>
-      <footer class="hero-attr">
-        <small>
-          XXX
-        </small>
-      </footer>
-    </header>
+    <article>
+      <hgroup class="w-container">
+        <h1>El impacto de la <i lang="en"> fast fashion </i> en el planeta</h1>
+        <p>
+          Escrito por Lourdes Gómez —
+          <time datetime="2024-12-31">31 de diciembre de 2024</time>
+        </p>
+      </hgroup>
+
+      <div class="hero">
+        <p class="img-attr"> Imagen de
+          <a href="https://pixabay.com/es/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1834650"
+             referrerpolicy="no-referrer" target="_blank">Pexels</a>
+          en
+          <a href="https://pixabay.com/es/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1834650"
+             referrerpolicy="no-referrer" target="_blank">Pixabay</a>
+        </p>
+      </div>
+
+      <div class="w-container">
+        <p>
+          La moda pronta, o
+          <i lang="en"> fast fashion</i>,
+          ha transformado la industria textil en las últimas
+          décadas. Su modelo se basa en la producción masiva y rápida de ropa, ofreciendo
+          tendencias de pasarela a precios accesibles. Sin embargo, este enfoque tiene un
+          costo oculto: graves impactos ambientales y sociales que a menudo pasan
+          desapercibidos.
+        </p>
+      </div>
+
+      <section class="w-container">
+        <h2>El problema ambiental</h2>
+        <p>
+          Según podemos leer en la
+          <a href="https://es.wikipedia.org/wiki/Moda_pronta" target="_blank"
+             referrerpolicy="no-referrer">
+            Wikipedia
+          </a>
+          , la industria de la moda pronta es
+          responsable del 10% de las emisiones globales y de la producción del 20% de
+          agua residual a nivel mundial, el reciclaje de las prendas de moda pronta se ha
+          propuesto como solución para la reducción de emisiones de dióxido de carbono,
+          producción de microplásticos, y en general, reducción de la polución. El principal
+          problema con esta solución es que el proceso de reciclaje puede llegar a dañar las
+          Página 13 de 15
+          fibras textiles de las prendas. Esto último reduce el número de usos de la prenda
+          en cuestión por lo que le resulta más barato a las compañías de moda
+          confeccionar ropa nueva a reciclar la vieja.
+        </p>
+      </section>
+
+      <section class="w-container">
+        <h2>Impacto social</h2>
+        <p>
+          La moda pronta también perpetúa condiciones laborales precarias. En países en
+          desarrollo, los trabajadores de fábricas textiles a menudo reciben salarios bajos y
+          se enfrentan a graves riesgos para su salud en entornos inseguros. El documental
+          <i lang="en"> The True Cost </i>
+          destaca historias de trabajadores que sufren las consecuencias de
+          esta industria, al tiempo que aborda las alternativas éticas.
+        </p>
+        <figure>
+          <div class="responsive-iframe">
+            <iframe src="https://www.youtube.com/embed/OaGp5_Sfbss?si=RfZLtYbgDHVKq7g5"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+          <figcaption>
+            <span class="figcaption-text">
+              <i lang="en"> The true cost </i> | Tráiler oficial | Director Andrew Morgan
+            </span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="w-container">
+        <h2>¿Qué puedes hacer?</h2>
+        <p>
+          Reducir el impacto de la moda rápida está al alcance de todos. Aquí tienes
+          algunos consejos prácticos:
+        </p>
+        <ol>
+          <li>
+            Compra de segunda mano. Visita tiendas
+            <i lang="en"> vintage </i>
+            o plataformas en línea para dar nueva vida a prendas usadas.
+          </li>
+          <li>
+            Elige marcas sostenibles. Investiga qué empresas priorizan prácticas éticas
+            y materiales ecológicos.
+          </li>
+          <li>
+            Cuida tus prendas. Repara, recicla o dona tu ropa en lugar de desecharla.
+          </li>
+          <li>
+            Reduce el consumo. Reflexiona antes de comprar: ¿realmente necesitas
+            esa prenda?
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="w-full">
+      <h2>Te puede interesar</h2>
+      <ul class="post-list grid-col-1-2-4">
+        <li class="post">
+          <div class="post-img">
+            <img src="img/blog-oso.jpg" alt="Plano frontal de un oso de color marrón.">
+            <p class="img-attr"> Foto de
+              <a href="https://unsplash.com/@roaming_angel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Angel Luciano
+              </a>
+              en
+              <a href="https://unsplash.com/photos/brown-grizzly-bear-crawling-in-the-woods-kNeWMuetKrY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Unsplash
+              </a>
+            </p>
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">
+              <a href="javascript:void(0)">
+                <i lang="en"> Rewilding</i>:
+                cómo la naturaleza puede recuperarse
+              </a>
+            </h3>
+            <a href="javascript:void(0)" class="btn">Leer más</a>
+          </div>
+        </li>
+        <li class="post">
+          <div class="post-img">
+            <img src="img/blog-bambu.jpg" alt="Plano nadir de un bosque de bambú.">
+            <p class="img-attr"> Foto de
+              <a href="https://unsplash.com/@marcelac61?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Marcelo Castilho
+              </a>
+              en
+              <a href="https://unsplash.com/photos/a-group-of-tall-bamboo-trees-in-a-forest-58V7w40BE6g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Unsplash
+              </a>
+            </p>
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">
+              <a href="javascript:void(0)">
+                Materiales renovables para un futuro sostenible
+              </a>
+            </h3>
+            <a href="javascript:void(0)" class="btn">Leer más</a>
+          </div>
+        </li>
+        <li class="post">
+          <div class="post-img"> <img src="img/blog-ods.png"
+                 alt="Logotipo de los 'Objetivos de Desarrollo Sostenible': un circulo sin centro cuya área cercana al perímetro está conformada por 18 secciones de colores.">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">
+              <a href="javascript:void(0)">
+                Los Objetivos de Desarrollo Sostenible no van por buen camino
+              </a>
+            </h3>
+            <a href="javascript:void(0)" class="btn">Leer más</a>
+          </div>
+        </li>
+        <li class="post">
+          <div class="post-img">
+            <img src="img/blog-huerto.jpg"
+                 alt="Primer plano de una tomatera con fruta verde y madura.">
+            <p class="img-attr"> Foto de
+              <a href="https://unsplash.com/@danielcgold?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Dan Gold
+              </a>
+              en
+              <a href="https://unsplash.com/photos/tomatoes-hanging-on-tomato-plant-4LiUI-Y2mI8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                 referrerpolicy="no-referrer" target="_blank">
+                Unsplash
+              </a>
+            </p>
+          </div>
+          <div class="post-content">
+            <h3 class="post-title">
+              <a href="javascript:void(0)">
+                Cultiva tu propio huerto en casa
+              </a>
+            </h3>
+            <a href="javascript:void(0)" class="btn">Leer más</a>
+          </div>
+        </li>
+      </ul>
+    </aside>
   </main>
 
   <footer class="w-full">
