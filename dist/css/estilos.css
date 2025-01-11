@@ -580,7 +580,7 @@ form .form-fields {
   }
 }
 
-:is(.tema main > article) > hgroup h1 {
+:is(.tema main > article) > header h1 {
   text-align: center;
   max-width: 60%;
   margin: 0 auto;
@@ -588,25 +588,25 @@ form .form-fields {
 }
 
 @media only screen and (width >= 806px) {
-  :is(.tema main > article) > hgroup h1 {
+  :is(.tema main > article) > header h1 {
     max-width: 100%;
   }
 }
 
 @media only screen and (width >= 1920px) {
-  :is(.tema main > article) > hgroup h1 {
+  :is(.tema main > article) > header h1 {
     font-size: 4rem;
   }
 }
 
-:is(:is(.tema main > article) > hgroup h1) [datetime] {
+:is(:is(.tema main > article) > header h1) [datetime] {
   color: var(--color-W);
   background-color: #40c382;
   background-color: var(--color-G);
   padding: 0 1rem;
 }
 
-:is(.tema main > article) > hgroup p {
+:is(.tema main > article) > header p {
   text-align: center;
   margin: 0 auto 2.5rem;
   font-size: xx-large;
@@ -614,7 +614,7 @@ form .form-fields {
 }
 
 @media only screen and (width >= 1920px) {
-  :is(.tema main > article) > hgroup p {
+  :is(.tema main > article) > header p {
     font-size: 2.5rem;
   }
 }
@@ -709,13 +709,13 @@ form .form-fields {
 @media only screen and (width >= 1920px) {
   .tema main > article {
     grid-template-columns: 1fr 4fr;
-    grid-template-areas: "t-hgroup t-hgroup"
+    grid-template-areas: "t-header t-header"
                          "t-nav t-list";
     display: grid;
   }
 
-  :is(.tema main > article) > hgroup {
-    grid-area: t-hgroup;
+  :is(.tema main > article) > header {
+    grid-area: t-header;
   }
 
   :is(.tema main > article) > nav {
@@ -743,7 +743,7 @@ form .form-fields {
     display: grid;
   }
 
-  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) hgroup {
+  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) header {
     grid-area: c-title;
     padding-top: 3rem;
   }
@@ -861,21 +861,21 @@ form .form-fields {
   padding-bottom: 2px;
 }
 
-:is(:is(.post main) article) > :where(hgroup, div, section) {
+:is(:is(.post main) article) > :where(header, div, section) {
   padding: 0 1rem 1rem;
 }
 
-:is(:is(.post main) article) > hgroup {
+:is(:is(.post main) article) > header {
   margin-top: .5rem;
 }
 
-:is(:is(:is(.post main) article) > hgroup) h1 {
+:is(:is(:is(.post main) article) > header) h1 {
   margin-bottom: 2.5rem;
   font-size: 2.45rem;
 }
 
 @media only screen and (width >= 1920px) {
-  :is(:is(:is(.post main) article) > hgroup) h1 {
+  :is(:is(:is(.post main) article) > header) h1 {
     font-size: 4.3rem;
   }
 }

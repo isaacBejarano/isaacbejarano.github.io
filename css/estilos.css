@@ -589,7 +589,7 @@ index.html
 
 .tema {
   main > article {
-    > hgroup h1 {
+    > header h1 {
       max-width: 60%;
       margin: 0 auto;
       padding: 1rem 0 2.5rem;
@@ -610,7 +610,7 @@ index.html
       }
     }
 
-    > hgroup p {
+    > header p {
       text-align: center;
       font-size: xx-large;
       font-weight: 700;
@@ -719,12 +719,12 @@ index.html
       display: grid;
       grid-template-columns: 1fr 4fr;
       grid-template-areas:
-        "t-hgroup t-hgroup"
+        "t-header t-header"
         "t-nav t-list"
       ;
 
-      > hgroup {
-        grid-area: t-hgroup;
+      > header {
+        grid-area: t-header;
       }
 
       > nav {
@@ -751,7 +751,7 @@ index.html
             ;
             align-items: start;
 
-            hgroup {
+            header {
               grid-area: c-title;
               padding-top: 3rem;
             }
@@ -875,12 +875,12 @@ index.html
       }
     }
 
-    > :where(hgroup, div, section) {
+    > :where(header, div, section) {
       padding: 1rem;
       padding-top: 0;
     }
 
-    > hgroup {
+    > header {
       margin-top: 0.5rem;
 
       h1 {
