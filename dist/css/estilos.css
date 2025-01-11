@@ -1,0 +1,1024 @@
+@font-face {
+  font-family: AlegreyaSans;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../AlegreyaSans-Regular.d5bb4031.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: AlegreyaSans;
+  font-weight: 400;
+  font-style: oblique;
+  src: url("../AlegreyaSans-Italic.25307f03.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: AlegreyaSans;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../AlegreyaSans-Bold.b51388f7.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: AlegreyaSans;
+  font-weight: 700;
+  font-style: oblique;
+  src: url("../AlegreyaSans-BoldItalic.da229b9b.ttf") format("truetype");
+}
+
+:root {
+  --color-B: #000;
+  --color-W: #fff;
+  --color-G: #40c382;
+  --color-bg-page: #f2f2e6;
+  --color-bg-img-attr: #f2f2e6b3;
+  --vw-mobile: 450px;
+  --vw-tablet: 806px;
+  --vw-desktop: 1920px;
+  --vh-desktop: 1140px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* :where(*):before, * :where(*):after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-B);
+  font-family: AlegreyaSans, sans-serif;
+  font-weight: 400;
+}
+
+body > header {
+  background-color: #fff;
+  background-color: var(--color-W);
+  font-size: medium;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+main {
+  background-color: #f2f2e6;
+  background-color: var(--color-bg-page);
+}
+
+:where(ol, ul) {
+  list-style-type: none;
+}
+
+[href] {
+  color: var(--color-B);
+  outline: none;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+[href]:not(.btn):hover, [href]:not(.btn):focus {
+  color: var(--color-G);
+}
+
+[href]:visited {
+  color: var(--color-B);
+}
+
+:where(p, figcaption) {
+  line-height: 1.5;
+}
+
+:where(p, figcaption) [href] {
+  border: 1px dotted #000;
+  border: 1px dotted var(--color-B);
+  border-width: 0 0 1px;
+}
+
+:is(:where(p, figcaption) [href]):not(.btn):hover, :is(:where(p, figcaption) [href]):not(.btn):focus {
+  color: var(--color-B);
+  border-style: solid;
+}
+
+abbr {
+  cursor: help;
+}
+
+.w-full {
+  width: 100%;
+  padding: 1rem;
+}
+
+@media only screen and (width >= 1920px) {
+  .w-full {
+    padding: 2rem 3.5rem;
+  }
+}
+
+.w-container {
+  max-width: 1140px;
+  max-width: var(--vh-desktop);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.topmenu {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-areas: "tm-logo"
+                       "tm-menu";
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+}
+
+.topmenu > [href] {
+  grid-area: tm-logo;
+  justify-self: center;
+}
+
+.topmenu > :where(ol, ul) {
+  text-align: center;
+  grid-area: tm-menu;
+  justify-self: center;
+}
+
+:is(.topmenu > :where(ol, ul)) > li {
+  margin-top: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media only screen and (width >= 1920px) {
+  .topmenu {
+    grid-template-rows: 1fr;
+    grid-template-areas: "tm-logo tm-menu";
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .topmenu > [href] {
+    justify-self: start;
+  }
+
+  .topmenu > ol {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  :is(.topmenu > ol) li:last-of-type {
+    border: 1px solid #000;
+    border: 1px solid var(--color-B);
+    border-width: 0 0 0 1px;
+  }
+}
+
+.hero {
+  text-align: center;
+  color: var(--color-W);
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 536px;
+  padding: 1rem;
+  display: flex;
+  position: relative;
+}
+
+.hero > .hero-title {
+  margin-bottom: 3rem;
+}
+
+.hero > .hero-legend {
+  font-size: xx-large;
+  line-height: 1.3;
+}
+
+@media only screen and (width >= 806px) {
+  .hero > .hero-title {
+    font-size: 3.7rem;
+  }
+
+  .hero > .hero-legend {
+    font-size: 2.9rem;
+    line-height: 1.3;
+  }
+}
+
+@media only screen and (width >= 1920px) {
+  .hero > .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero > .hero-legend {
+    font-size: 3rem;
+  }
+}
+
+body > footer {
+  color: var(--color-W);
+  background-color: #000;
+  background-color: var(--color-B);
+  grid-template-areas: "f-div"
+                       "f-ul"
+                       "f-ol";
+  place-items: center;
+  font-size: smaller;
+  display: grid;
+  position: sticky;
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important;
+}
+
+:is(body > footer) [href] {
+  color: var(--color-W);
+}
+
+:is(body > footer) > div {
+  grid-area: f-div;
+}
+
+:is(:is(body > footer) > div) > img {
+  margin: 0 auto 1.2rem;
+  display: block;
+}
+
+:is(:is(body > footer) > div) p {
+  margin-bottom: 1rem;
+}
+
+:is(body > footer) > ul {
+  text-align: center;
+  grid-area: f-ul;
+  margin-bottom: .5rem;
+}
+
+:is(:is(body > footer) > ul) li {
+  display: inline-block;
+}
+
+:is(:is(:is(body > footer) > ul) li) :where(:hover, :focus) {
+  opacity: .7;
+}
+
+:is(body > footer) > ol {
+  text-align: center;
+  grid-area: f-ol;
+  line-height: 1.6;
+}
+
+@media only screen and (width >= 1920px) {
+  body > footer {
+    grid-template-areas: "f-div f-ul"
+                         "f-div f-ol";
+  }
+
+  :is(body > footer) > div {
+    justify-self: start;
+  }
+
+  :is(:is(body > footer) > div) > img {
+    margin: 0 0 1.5rem;
+  }
+
+  :is(body > footer) > :where(ul, ol) {
+    justify-self: end;
+    display: flex;
+  }
+
+  :is(body > footer) ul li {
+    margin-left: .5rem;
+  }
+
+  :is(body > footer) ol {
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    display: flex;
+  }
+
+  :is(:is(body > footer) ol) li {
+    border: 1px solid #fff;
+    border: 1px solid var(--color-W);
+    border-width: 0 0 0 1px;
+    padding: 0 1rem;
+  }
+
+  :is(:is(body > footer) ol) li:first-of-type {
+    border: none;
+  }
+
+  :is(:is(body > footer) ol) li:last-of-type {
+    padding: 0;
+  }
+}
+
+:where(.btn, [type="submit"]) {
+  border: 1px solid #000;
+  border: 1px solid var(--color-B);
+  background-color: #0000;
+  outline: none;
+  padding: .5rem 1rem;
+  font-size: medium;
+}
+
+:where(.btn, [type="submit"]):focus, :where(.btn, [type="submit"]):hover {
+  border: 1px solid #40c382;
+  border: 1px solid var(--color-G);
+  cursor: pointer;
+}
+
+form .form-fields {
+  border: none;
+}
+
+:is(form .form-fields) [name] {
+  max-width: 450px;
+  max-width: var(--vw-mobile);
+  margin-bottom: 1rem;
+}
+
+:is(form .form-fields) li:has([name]:not([type="checkbox"])) > label {
+  margin-bottom: .5rem;
+  display: block;
+}
+
+:is(form .form-fields) li:has([name]:not([type="checkbox"])) > [name] {
+  border: none;
+  outline: none;
+  width: 100%;
+  min-height: 2rem;
+}
+
+:is(:is(form .form-fields) li:has([name]:not([type="checkbox"])) > [name]):focus {
+  border: 1px solid #000;
+  border: 1px solid var(--color-B);
+}
+
+:is(form .form-fields) li:has([name][type="checkbox"]) > [name] {
+  background-color: pink;
+  padding: 1rem;
+  display: inline-block;
+}
+
+:is(:is(form .form-fields) li:has([name][type="checkbox"]) > [name]):focus {
+  outline: 1px solid #000;
+  outline: 1px solid var(--color-B);
+}
+
+.card-list {
+  grid-gap: 2rem;
+  justify-items: stretch;
+  display: grid;
+}
+
+.card .card-img {
+  position: relative;
+}
+
+:is(.card .card-img) img {
+  width: 100%;
+}
+
+:is(.card .card-img) [href] {
+  padding-bottom: 2px;
+}
+
+.card .card-content {
+  background-color: #fff;
+  background-color: var(--color-W);
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+}
+
+:is(.card .card-content) p {
+  flex: 1;
+}
+
+:is(.card .card-content) p:last-of-type > [href] {
+  line-height: 1.3;
+}
+
+.pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+}
+
+.pagination > li {
+  background-color: #fff;
+  background-color: var(--color-W);
+  border: 1px solid #000;
+  border: 1px solid var(--color-B);
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  margin: 0 .5rem;
+  padding: .5rem;
+  display: flex;
+}
+
+:is(.pagination > li):not(:has(.active)):where(:focus-within, :hover) {
+  background-color: #40c382;
+  background-color: var(--color-G);
+  cursor: pointer;
+  border-color: #40c382;
+  border-color: var(--color-G);
+}
+
+:is(.pagination > li):not(:has(.active)):where(:focus-within, :hover) > [href] {
+  color: var(--color-W);
+  border-color: inherit;
+}
+
+.active:is(.pagination > li) {
+  background-color: #40c382;
+  background-color: var(--color-G);
+  border-color: #40c382;
+  border-color: var(--color-G);
+}
+
+.active:is(.pagination > li) > [href] {
+  color: var(--color-W);
+}
+
+.img-attr {
+  text-align: right;
+  color: var(--color-B);
+  background-color: #f2f2e6b3;
+  background-color: var(--color-bg-img-attr);
+  margin: 0;
+  padding: .25rem .5rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+:is(.index .img-attr) [href] {
+  padding-bottom: 2px;
+}
+
+:is(.blog .img-attr) [href] {
+  padding-bottom: 3px;
+}
+
+.grid-col-1-3-3 {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.grid-col-1-2-3 {
+  grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+}
+
+@media only screen and (width >= 1920px) {
+  .grid-col-1-2-3 {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+.grid-col-1-2-4 {
+  grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+}
+
+@media only screen and (width >= 1920px) {
+  .grid-col-1-2-4 {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  }
+}
+
+.index article {
+  padding-bottom: 6rem;
+}
+
+:is(.index article) > .hero {
+  background-image: url("../img/hero-image-home.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+:is(.index article) > section {
+  padding-top: 4.5rem;
+  font-size: 1.1rem;
+}
+
+:is(:is(.index article) > section) h2 {
+  margin-bottom: 3rem;
+  font-size: 1.9rem;
+}
+
+:is(:is(.index article) > section) h3 {
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+}
+
+:is(:is(.index article) > section) p {
+  margin-bottom: 1rem;
+}
+
+:is(:is(.index article) > section):last-of-type > .card-list {
+  grid-gap: 3rem;
+  margin-top: 3rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.index article) > section {
+    padding-left: 2.9rem;
+    padding-right: 2.9rem;
+  }
+
+  :is(:is(.index article) > section) h2 {
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+  }
+
+  :is(:is(.index article) > section) p {
+    width: 85%;
+    font-size: larger;
+  }
+
+  :is(:is(.index article) > section):first-of-type {
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  :is(:is(.index article) > section):first-of-type h2 {
+    width: 100%;
+    display: block;
+  }
+
+  :is(:is(:is(.index article) > section):first-of-type div):first-of-type {
+    width: 60%;
+  }
+
+  :is(:is(:is(.index article) > section):first-of-type div):last-of-type {
+    width: 40%;
+  }
+
+  :is(:is(.index article) > section):last-of-type .card h3 {
+    margin-bottom: .5rem;
+    font-size: 1.6rem;
+  }
+
+  :is(:is(.index article) > section):last-of-type .card p {
+    margin-bottom: 1rem;
+    font-size: large;
+  }
+}
+
+:is(.tema main > article) > hgroup h1 {
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 1rem 0 2.5rem;
+}
+
+@media only screen and (width >= 806px) {
+  :is(.tema main > article) > hgroup h1 {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.tema main > article) > hgroup h1 {
+    font-size: 4rem;
+  }
+}
+
+:is(:is(.tema main > article) > hgroup h1) [datetime] {
+  color: var(--color-W);
+  background-color: #40c382;
+  background-color: var(--color-G);
+  padding: 0 1rem;
+}
+
+:is(.tema main > article) > hgroup p {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.tema main > article) > hgroup p {
+    font-size: 2.5rem;
+  }
+}
+
+:is(.tema main > article) > nav ol {
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: smaller;
+  font-weight: 700;
+  display: flex;
+}
+
+:is(:is(.tema main > article) > nav ol) > li:before {
+  content: "·";
+  color: var(--color-G);
+  margin-left: .2rem;
+  font-size: large;
+}
+
+:is(:is(.tema main > article) > nav ol) > li:first-of-type:before {
+  content: "";
+}
+
+:is(:is(.tema main > article) > nav ol) > li > [href]:focus, :is(:is(.tema main > article) > nav ol) > li > [href]:hover {
+  color: var(--color-G);
+}
+
+@media only screen and (width >= 806px) {
+  :is(.tema main > article) > nav ol {
+    font-size: medium;
+  }
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.tema main > article) > nav ol {
+    font-size: .9rem;
+    display: block;
+  }
+
+  :is(:is(.tema main > article) > nav ol) > li:before {
+    content: "";
+  }
+}
+
+:is(.tema main > article) > ol.card-list {
+  padding: 2rem 0 4rem;
+}
+
+:is(:is(.tema main > article) > ol.card-list) > li:before {
+  content: "#" counter(list-item);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-title {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-title) + p {
+  margin-bottom: .8rem;
+}
+
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img figure) img {
+  background-color: #fff;
+  background-color: var(--color-W);
+  height: auto;
+  padding: 1rem;
+}
+
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img figure) figcaption {
+  font-size: .7rem;
+}
+
+:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-content {
+  background-color: #0000;
+  padding: .8rem 0;
+}
+
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-content) > p > .br[href] {
+  margin-top: .8rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+@media only screen and (width >= 806px) {
+  :is(:is(.tema main > article) .card-img figure) img {
+    height: 480px;
+  }
+}
+
+@media only screen and (width >= 1920px) {
+  .tema main > article {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "t-hgroup t-hgroup"
+                         "t-nav t-list";
+    display: grid;
+  }
+
+  :is(.tema main > article) > hgroup {
+    grid-area: t-hgroup;
+  }
+
+  :is(.tema main > article) > nav {
+    grid-area: t-nav;
+  }
+
+  :is(.tema main > article) > ol.card-list {
+    grid-area: t-list;
+  }
+
+  :is(:is(.tema main > article) > ol.card-list) > li {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  :is(:is(:is(.tema main > article) > ol.card-list) > li):before {
+    margin-top: -.4rem;
+    position: absolute;
+  }
+
+  :is(:is(:is(.tema main > article) > ol.card-list) > li) .card {
+    grid-template-columns: 1fr 408px 2fr;
+    grid-template-areas: "c-title c-img c-content c-content";
+    align-items: start;
+    display: grid;
+  }
+
+  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) hgroup {
+    grid-area: c-title;
+    padding-top: 3rem;
+  }
+
+  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-img {
+    grid-area: c-img;
+  }
+
+  :is(:is(:is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-img) figure) img {
+    height: 259px;
+  }
+
+  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-content {
+    grid-area: c-content;
+    padding: 0 0 0 3rem;
+    font-size: 1.3rem;
+  }
+}
+
+:is(.blog main) > h1 {
+  text-align: center;
+  margin: 1rem 0 3rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.blog main) > h1 {
+    margin: 0 0 3rem;
+    font-size: 4.25rem;
+  }
+}
+
+:is(.blog main) > .blog-list {
+  grid-gap: 2.5rem;
+  display: grid;
+}
+
+:is(:is(.blog main) > .blog-list) .blog {
+  background-color: #fff;
+  background-color: var(--color-W);
+}
+
+:is(:is(:is(.blog main) > .blog-list) .blog) .blog-img {
+  position: relative;
+}
+
+:is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-img) img {
+  width: 100%;
+}
+
+:is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-img) .img-attr {
+  padding: .4rem;
+  font-size: smaller;
+  position: absolute;
+  bottom: 1.3rem;
+}
+
+:is(:is(:is(.blog main) > .blog-list) .blog) .blog-content {
+  padding: .8rem 1rem 1rem;
+}
+
+:is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-content) .blog-title {
+  margin-bottom: .5rem;
+}
+
+:is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-content) p {
+  margin-bottom: .8rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-content) p {
+    font-size: large;
+  }
+}
+
+:is(:is(:is(:is(.blog main) > .blog-list) .blog) .blog-content) .btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+:is(.blog main) > ol.pagination {
+  margin: 3rem auto 3.5rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(.blog main) > ol.pagination {
+    margin: 2rem auto 1.5rem;
+  }
+}
+
+:is(.post main) .breadcrumb {
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  font-size: small;
+  display: flex;
+}
+
+:is(:is(:is(.post main) .breadcrumb) li:not(:last-of-type)):after {
+  content: ">";
+  margin: 0 .5rem;
+}
+
+:is(:is(.post main) article) > .hero {
+  background-image: url("../img/post-fast-fashion.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2rem;
+}
+
+:is(:is(:is(.post main) article) > .hero) .img-attr {
+  padding-bottom: 6px;
+  font-size: small;
+}
+
+:is(:is(:is(:is(.post main) article) > .hero) .img-attr) > [href] {
+  padding-bottom: 2px;
+}
+
+:is(:is(.post main) article) > :where(hgroup, div, section) {
+  padding: 0 1rem 1rem;
+}
+
+:is(:is(.post main) article) > hgroup {
+  margin-top: .5rem;
+}
+
+:is(:is(:is(.post main) article) > hgroup) h1 {
+  margin-bottom: 2.5rem;
+  font-size: 2.45rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(.post main) article) > hgroup) h1 {
+    font-size: 4.3rem;
+  }
+}
+
+:is(:is(.post main) article) > div:nth-of-type(2) {
+  margin-bottom: 1.5rem;
+  padding-top: .5rem;
+  font-size: 1.3rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(.post main) article) > div:nth-of-type(2) {
+    font-size: xx-large;
+  }
+}
+
+:is(:is(.post main) article) section {
+  padding-bottom: .1rem;
+}
+
+:is(:is(:is(.post main) article) section) h2 {
+  font-size: 1.85rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(.post main) article) section) h2 {
+    font-size: 2.5rem;
+  }
+
+  :is(:is(:is(.post main) article) section) figure:has(iframe) {
+    width: 771px;
+    margin: 0 auto;
+  }
+}
+
+:is(:is(:is(:is(:is(.post main) article) section) figure:has(iframe)) .responsive-iframe) iframe {
+  aspect-ratio: 16 / 9;
+  border-color: #0000;
+  width: 100%;
+}
+
+:is(:is(:is(:is(.post main) article) section) figure:has(iframe)) figcaption {
+  margin-top: .5rem;
+  font-size: .7rem;
+}
+
+:is(:is(:is(.post main) article) section) p {
+  font-size: medium;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(.post main) article) section) p {
+    font-size: 1.29rem;
+  }
+}
+
+:is(:is(:is(.post main) article) section) ol {
+  margin-left: 2.5rem;
+  list-style: decimal;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(.post main) article) section) ol {
+    font-size: 1.29rem;
+  }
+}
+
+:is(:is(:is(:is(.post main) article) section) ol) > li {
+  margin-bottom: .8rem;
+}
+
+:is(:is(:is(.post main) article) section) > * {
+  margin-bottom: 1rem;
+}
+
+:is(.post main) aside {
+  border: 1px solid #000;
+  border: 1px solid var(--color-B);
+  border-width: 1px 0 0;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 7rem;
+}
+
+:is(:is(.post main) aside) h2 {
+  margin-bottom: 1rem;
+}
+
+:is(:is(.post main) aside) > .post-list {
+  grid-gap: 2.5rem;
+  display: grid;
+}
+
+:is(:is(:is(.post main) aside) > .post-list) .post {
+  background-color: #fff;
+  background-color: var(--color-W);
+  flex-direction: column;
+  display: flex;
+}
+
+:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-img {
+  position: relative;
+}
+
+:is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-img) img {
+  width: 100%;
+}
+
+:is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-img) .img-attr {
+  padding: .4rem;
+  font-size: smaller;
+  position: absolute;
+  bottom: 1.3rem;
+}
+
+:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content {
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: .8rem 1rem 1rem;
+  display: flex;
+}
+
+:is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content) .post-title {
+  margin-bottom: .5rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content) .post-title {
+    font-size: 1.5rem;
+  }
+}
+
+:is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content) p {
+  margin-bottom: .8rem;
+}
+
+@media only screen and (width >= 1920px) {
+  :is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content) p {
+    font-size: large;
+  }
+}
+
+:is(:is(:is(:is(:is(.post main) aside) > .post-list) .post) .post-content) .btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+}

@@ -1,0 +1,6 @@
+{
+  "plugins": {
+    "postcss-custom-properties": true,
+		"postcss-nesting":{}
+  }
+}
