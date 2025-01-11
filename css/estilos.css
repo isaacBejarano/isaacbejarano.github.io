@@ -155,7 +155,7 @@ components
     justify-self: center;
   }
 
-  > :where(ol, ul) {
+  > ul {
     grid-area: tm-menu;
     justify-self: center;
     text-align: center;
@@ -177,7 +177,7 @@ components
       justify-self: start;
     }
 
-    > ol {
+    > ul {
       display: flex;
       align-items: center;
       justify-content: center;

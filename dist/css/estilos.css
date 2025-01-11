@@ -146,13 +146,13 @@ abbr {
   justify-self: center;
 }
 
-.topmenu > :where(ol, ul) {
+.topmenu > ul {
   text-align: center;
   grid-area: tm-menu;
   justify-self: center;
 }
 
-:is(.topmenu > :where(ol, ul)) > li {
+:is(.topmenu > ul) > li {
   margin-top: .5rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -170,13 +170,13 @@ abbr {
     justify-self: start;
   }
 
-  .topmenu > ol {
+  .topmenu > ul {
     justify-content: center;
     align-items: center;
     display: flex;
   }
 
-  :is(.topmenu > ol) li:last-of-type {
+  :is(.topmenu > ul) li:last-of-type {
     border: 1px solid #000;
     border: 1px solid var(--color-B);
     border-width: 0 0 0 1px;
