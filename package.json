@@ -5,8 +5,7 @@
   "source": [
     "*.html",
     "css/*",
-    "img/*",
-    "validations/*"
+    "img/*"
   ],
   "author": "Isaac Bejarano",
   "license": "ISC",
