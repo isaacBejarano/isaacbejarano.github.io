@@ -589,6 +589,7 @@ form .form-fields {
 
   :is(:is(:is(.index main) > section):first-of-type div):first-of-type {
     width: 60%;
+    padding-right: 6rem;
   }
 
   :is(:is(:is(.index main) > section):first-of-type div):last-of-type {
@@ -606,7 +607,6 @@ form .form-fields {
   }
 
   :is(:is(.index main) > section):last-of-type .card {
-    background-color: #98fb98;
     height: 340px;
   }
 }

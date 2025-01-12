@@ -588,6 +588,7 @@ index.html
 
         div {
           &:first-of-type {
+            padding-right: 6rem;
             width: 60%;
           }
 
@@ -609,20 +610,7 @@ index.html
         }
 
         .card {
-          background-color: palegreen;
           height: 340px;
-
-          /* display: flex;
-          flex-direction: column;
-          justify-content: space-between; */
-          .card-content {
-            /* display: flex;
-            flex-direction: column;
-            justify-content: space-between; */
-            /* height: 100%;
-            height: 165px;
-            background-color: paleturquoise; */
-          }
         }
       }
     }
