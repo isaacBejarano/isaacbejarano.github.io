@@ -618,7 +618,7 @@ index.html
 
 .tema {
   main {
-    > header h1 {
+    > h1 {
       max-width: 60%;
       margin: 0 auto;
       padding: 1rem 0 2.5rem;
@@ -639,7 +639,7 @@ index.html
       }
     }
 
-    > header p {
+    > p {
       text-align: center;
       font-size: xx-large;
       font-weight: 700;
@@ -748,12 +748,17 @@ index.html
       display: grid;
       grid-template-columns: 1fr 4fr;
       grid-template-areas:
-        "t-header t-header"
+        "t-h1 t-h1"
+        "t-p t-p"
         "t-nav t-list"
       ;
 
-      > header {
-        grid-area: t-header;
+      > h1 {
+        grid-area: t-h1;
+      }
+
+      > p {
+        grid-area: t-p;
       }
 
       > nav {
