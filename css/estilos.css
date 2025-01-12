@@ -630,7 +630,7 @@ index.html
 }
 
 .tema {
-  main > article {
+  main {
     > header h1 {
       max-width: 60%;
       margin: 0 auto;

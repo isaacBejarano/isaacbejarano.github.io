@@ -611,7 +611,7 @@ form .form-fields {
   }
 }
 
-:is(.tema main > article) > header h1 {
+:is(.tema main) > header h1 {
   text-align: center;
   max-width: 60%;
   margin: 0 auto;
@@ -619,25 +619,25 @@ form .form-fields {
 }
 
 @media only screen and (width >= 806px) {
-  :is(.tema main > article) > header h1 {
+  :is(.tema main) > header h1 {
     max-width: 100%;
   }
 }
 
 @media only screen and (width >= 1920px) {
-  :is(.tema main > article) > header h1 {
+  :is(.tema main) > header h1 {
     font-size: 4rem;
   }
 }
 
-:is(:is(.tema main > article) > header h1) [datetime] {
+:is(:is(.tema main) > header h1) [datetime] {
   color: var(--color-W);
   background-color: #40c382;
   background-color: var(--color-G);
   padding: 0 1rem;
 }
 
-:is(.tema main > article) > header p {
+:is(.tema main) > header p {
   text-align: center;
   margin: 0 auto 2.5rem;
   font-size: xx-large;
@@ -645,12 +645,12 @@ form .form-fields {
 }
 
 @media only screen and (width >= 1920px) {
-  :is(.tema main > article) > header p {
+  :is(.tema main) > header p {
     font-size: 2.5rem;
   }
 }
 
-:is(.tema main > article) > nav ol {
+:is(.tema main) > nav ol {
   flex-wrap: wrap;
   justify-content: center;
   font-size: smaller;
@@ -658,136 +658,136 @@ form .form-fields {
   display: flex;
 }
 
-:is(:is(.tema main > article) > nav ol) > li:before {
+:is(:is(.tema main) > nav ol) > li:before {
   content: "·";
   color: var(--color-G);
   margin-left: .2rem;
   font-size: large;
 }
 
-:is(:is(.tema main > article) > nav ol) > li:first-of-type:before {
+:is(:is(.tema main) > nav ol) > li:first-of-type:before {
   content: "";
 }
 
-:is(:is(.tema main > article) > nav ol) > li > [href]:focus, :is(:is(.tema main > article) > nav ol) > li > [href]:hover {
+:is(:is(.tema main) > nav ol) > li > [href]:focus, :is(:is(.tema main) > nav ol) > li > [href]:hover {
   color: var(--color-G);
 }
 
 @media only screen and (width >= 806px) {
-  :is(.tema main > article) > nav ol {
+  :is(.tema main) > nav ol {
     font-size: medium;
   }
 }
 
 @media only screen and (width >= 1920px) {
-  :is(.tema main > article) > nav ol {
+  :is(.tema main) > nav ol {
     font-size: .9rem;
     display: block;
   }
 
-  :is(:is(.tema main > article) > nav ol) > li:before {
+  :is(:is(.tema main) > nav ol) > li:before {
     content: "";
   }
 }
 
-:is(.tema main > article) > ol.card-list {
+:is(.tema main) > ol.card-list {
   padding: 2rem 0 4rem;
 }
 
-:is(:is(.tema main > article) > ol.card-list) > li:before {
+:is(:is(.tema main) > ol.card-list) > li:before {
   content: "#" counter(list-item);
   font-size: 2.5rem;
   font-weight: 700;
 }
 
-:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-title {
+:is(:is(:is(.tema main) > ol.card-list) .card) .card-title {
   font-size: 1.8rem;
   line-height: 1;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-title) + p {
+:is(:is(:is(:is(.tema main) > ol.card-list) .card) .card-title) + p {
   margin-bottom: .8rem;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img) img {
+:is(:is(:is(:is(.tema main) > ol.card-list) .card) .card-img) img {
   background-color: #fff;
   background-color: var(--color-W);
   height: auto;
   padding: 1rem;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img) figcaption {
+:is(:is(:is(:is(.tema main) > ol.card-list) .card) .card-img) figcaption {
   font-size: .7rem;
 }
 
-:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-content {
+:is(:is(:is(.tema main) > ol.card-list) .card) .card-content {
   background-color: #0000;
   padding: .8rem 0;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-content) > p > .br[href] {
+:is(:is(:is(:is(.tema main) > ol.card-list) .card) .card-content) > p > .br[href] {
   margin-top: .8rem;
   line-height: 1;
   display: inline-block;
 }
 
 @media only screen and (width >= 806px) {
-  :is(:is(.tema main > article) .card-img) img {
+  :is(:is(.tema main) .card-img) img {
     height: 480px;
   }
 }
 
 @media only screen and (width >= 1920px) {
-  .tema main > article {
+  .tema main {
     grid-template-columns: 1fr 4fr;
     grid-template-areas: "t-header t-header"
                          "t-nav t-list";
     display: grid;
   }
 
-  :is(.tema main > article) > header {
+  :is(.tema main) > header {
     grid-area: t-header;
   }
 
-  :is(.tema main > article) > nav {
+  :is(.tema main) > nav {
     grid-area: t-nav;
   }
 
-  :is(.tema main > article) > ol.card-list {
+  :is(.tema main) > ol.card-list {
     grid-area: t-list;
   }
 
-  :is(:is(.tema main > article) > ol.card-list) > li {
+  :is(:is(.tema main) > ol.card-list) > li {
     margin-bottom: 1.5rem;
     position: relative;
   }
 
-  :is(:is(:is(.tema main > article) > ol.card-list) > li):before {
+  :is(:is(:is(.tema main) > ol.card-list) > li):before {
     margin-top: -.4rem;
     position: absolute;
   }
 
-  :is(:is(:is(.tema main > article) > ol.card-list) > li) .card {
+  :is(:is(:is(.tema main) > ol.card-list) > li) .card {
     grid-template-columns: 1fr 408px 2fr;
     grid-template-areas: "c-title c-img c-content c-content";
     align-items: start;
     display: grid;
   }
 
-  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) header {
+  :is(:is(:is(:is(.tema main) > ol.card-list) > li) .card) header {
     grid-area: c-title;
     padding-top: 3rem;
   }
 
-  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-img {
+  :is(:is(:is(:is(.tema main) > ol.card-list) > li) .card) .card-img {
     grid-area: c-img;
   }
 
-  :is(:is(:is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-img) figure) img {
+  :is(:is(:is(:is(:is(:is(.tema main) > ol.card-list) > li) .card) .card-img) figure) img {
     height: 259px;
   }
 
-  :is(:is(:is(:is(.tema main > article) > ol.card-list) > li) .card) .card-content {
+  :is(:is(:is(:is(.tema main) > ol.card-list) > li) .card) .card-content {
     grid-area: c-content;
     padding: 0 0 0 3rem;
     font-size: 1.3rem;
