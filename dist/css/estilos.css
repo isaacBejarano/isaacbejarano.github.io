@@ -501,82 +501,113 @@ form .form-fields {
   }
 }
 
-.index article {
+.index main {
   padding-bottom: 6rem;
 }
 
-:is(.index article) > .hero {
+:is(.index main) > .hero {
   background-image: url("../img/hero-image-home.jpg");
   background-position: center;
   background-size: cover;
 }
 
-:is(.index article) > section {
+:is(.index main) > section {
   padding-top: 4.5rem;
   font-size: 1.1rem;
 }
 
-:is(:is(.index article) > section) h2 {
+:is(:is(.index main) > section) h2 {
   margin-bottom: 3rem;
   font-size: 1.9rem;
 }
 
-:is(:is(.index article) > section) h3 {
-  margin-bottom: .5rem;
+:is(:is(.index main) > section) h3 {
+  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
-:is(:is(.index article) > section) p {
+:is(:is(.index main) > section) p {
   margin-bottom: 1rem;
 }
 
-:is(:is(.index article) > section):last-of-type > .card-list {
+:is(:is(.index main) > section):last-of-type > .card-list {
   grid-gap: 3rem;
   margin-top: 3rem;
 }
 
+:is(:is(:is(.index main) > section):last-of-type > .card-list) .card {
+  background-color: #fff;
+  background-color: var(--color-W);
+  padding: 2rem 1rem;
+}
+
+:is(:is(:is(:is(.index main) > section):last-of-type > .card-list) .card) .card-content {
+  padding: 0;
+}
+
+@media only screen and (width >= 806px) {
+  :is(:is(.index main) > section):last-of-type .card {
+    background-color: #eee8aa;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    display: flex;
+  }
+
+  :is(:is(:is(.index main) > section):last-of-type .card) .card-content {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
 @media only screen and (width >= 1920px) {
-  :is(.index article) > section {
+  :is(.index main) > section {
     padding-left: 2.9rem;
     padding-right: 2.9rem;
   }
 
-  :is(:is(.index article) > section) h2 {
+  :is(:is(.index main) > section) h2 {
     margin-bottom: 3rem;
     font-size: 2.2rem;
   }
 
-  :is(:is(.index article) > section) p {
-    width: 85%;
+  :is(:is(.index main) > section) p {
+    width: 100%;
     font-size: larger;
   }
 
-  :is(:is(.index article) > section):first-of-type {
+  :is(:is(.index main) > section):first-of-type {
     flex-wrap: wrap;
     display: flex;
   }
 
-  :is(:is(.index article) > section):first-of-type h2 {
+  :is(:is(.index main) > section):first-of-type h2 {
     width: 100%;
     display: block;
   }
 
-  :is(:is(:is(.index article) > section):first-of-type div):first-of-type {
+  :is(:is(:is(.index main) > section):first-of-type div):first-of-type {
     width: 60%;
   }
 
-  :is(:is(:is(.index article) > section):first-of-type div):last-of-type {
+  :is(:is(:is(.index main) > section):first-of-type div):last-of-type {
     width: 40%;
   }
 
-  :is(:is(.index article) > section):last-of-type .card h3 {
+  :is(:is(.index main) > section):last-of-type .card h3 {
     margin-bottom: .5rem;
     font-size: 1.6rem;
   }
 
-  :is(:is(.index article) > section):last-of-type .card p {
+  :is(:is(.index main) > section):last-of-type .card p {
     margin-bottom: 1rem;
     font-size: large;
+  }
+
+  :is(:is(.index main) > section):last-of-type .card {
+    background-color: #98fb98;
+    height: 340px;
   }
 }
 
@@ -678,14 +709,14 @@ form .form-fields {
   margin-bottom: .8rem;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img figure) img {
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img) img {
   background-color: #fff;
   background-color: var(--color-W);
   height: auto;
   padding: 1rem;
 }
 
-:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img figure) figcaption {
+:is(:is(:is(:is(.tema main > article) > ol.card-list) .card) .card-img) figcaption {
   font-size: .7rem;
 }
 
@@ -701,7 +732,7 @@ form .form-fields {
 }
 
 @media only screen and (width >= 806px) {
-  :is(:is(.tema main > article) .card-img figure) img {
+  :is(:is(.tema main > article) .card-img) img {
     height: 480px;
   }
 }
@@ -861,7 +892,7 @@ form .form-fields {
   padding-bottom: 2px;
 }
 
-:is(:is(.post main) article) > :where(header, div, section) {
+:is(:is(.post main) article) > :where(header, div) {
   padding: 0 1rem 1rem;
 }
 
@@ -892,62 +923,62 @@ form .form-fields {
   }
 }
 
-:is(:is(.post main) article) section {
+:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5) {
   padding-bottom: .1rem;
 }
 
-:is(:is(:is(.post main) article) section) h2 {
+:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) h2 {
   font-size: 1.85rem;
 }
 
 @media only screen and (width >= 1920px) {
-  :is(:is(:is(.post main) article) section) h2 {
+  :is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) h2 {
     font-size: 2.5rem;
   }
 
-  :is(:is(:is(.post main) article) section) figure:has(iframe) {
+  :is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) figure:has(iframe) {
     width: 771px;
     margin: 0 auto;
   }
 }
 
-:is(:is(:is(:is(:is(.post main) article) section) figure:has(iframe)) .responsive-iframe) iframe {
+:is(:is(:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) figure:has(iframe)) .responsive-iframe) iframe {
   aspect-ratio: 16 / 9;
   border-color: #0000;
   width: 100%;
 }
 
-:is(:is(:is(:is(.post main) article) section) figure:has(iframe)) figcaption {
+:is(:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) figure:has(iframe)) figcaption {
   margin-top: .5rem;
   font-size: .7rem;
 }
 
-:is(:is(:is(.post main) article) section) p {
+:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) p {
   font-size: medium;
 }
 
 @media only screen and (width >= 1920px) {
-  :is(:is(:is(.post main) article) section) p {
+  :is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) p {
     font-size: 1.29rem;
   }
 }
 
-:is(:is(:is(.post main) article) section) ol {
+:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) ol {
   margin-left: 2.5rem;
   list-style: decimal;
 }
 
 @media only screen and (width >= 1920px) {
-  :is(:is(:is(.post main) article) section) ol {
+  :is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) ol {
     font-size: 1.29rem;
   }
 }
 
-:is(:is(:is(:is(.post main) article) section) ol) > li {
+:is(:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) ol) > li {
   margin-bottom: .8rem;
 }
 
-:is(:is(:is(.post main) article) section) > * {
+:is(:is(:is(.post main) article) > div:nth-of-type(3), :is(:is(.post main) article) > div:nth-of-type(4), :is(:is(.post main) article) > div:nth-of-type(5)) > * {
   margin-bottom: 1rem;
 }
 

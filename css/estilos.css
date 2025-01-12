@@ -504,7 +504,7 @@ form {
 /**********
 index.html
 ***********/
-.index article {
+.index main {
   padding-bottom: 6rem;
 
   > .hero {
@@ -524,7 +524,7 @@ index.html
 
     h3 {
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     p {
@@ -535,6 +535,31 @@ index.html
       > .card-list {
         margin-top: 3rem;
         grid-gap: 3rem;
+
+        .card {
+          padding: 2rem 1rem;
+          background-color: var(--color-W);
+
+          .card-content {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 806px) {
+      &:last-of-type .card {
+        background-color: palegoldenrod;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
       }
     }
 
@@ -548,7 +573,7 @@ index.html
       }
 
       p {
-        width: 85%;
+        width: 100%;
         font-size: larger;
       }
 
@@ -581,6 +606,23 @@ index.html
         .card p {
           margin-bottom: 1rem;
           font-size: large;
+        }
+
+        .card {
+          background-color: palegreen;
+          height: 340px;
+
+          /* display: flex;
+          flex-direction: column;
+          justify-content: space-between; */
+          .card-content {
+            /* display: flex;
+            flex-direction: column;
+            justify-content: space-between; */
+            /* height: 100%;
+            height: 165px;
+            background-color: paleturquoise; */
+          }
         }
       }
     }
@@ -682,7 +724,7 @@ index.html
         * kept ratio (mobile/desk) => 418x259 px
         * kept ratio (tablet) => 742x480 px
         */
-        .card-img figure {
+        .card-img {
           img {
             padding: 1rem;
             background-color: var(--color-W);
@@ -708,7 +750,7 @@ index.html
     }
 
     @media only screen and (min-width: 806px) {
-      .card-img figure {
+      .card-img {
         img {
           height: 480px;
         }
@@ -875,7 +917,7 @@ index.html
       }
     }
 
-    > :where(header, div, section) {
+    > :where(header, div) {
       padding: 1rem;
       padding-top: 0;
     }
@@ -903,7 +945,9 @@ index.html
       }
     }
 
-    section {
+    > div:nth-of-type(3),
+    > div:nth-of-type(4),
+    > div:nth-of-type(5) {
       padding-bottom: 0.1rem;
 
       h2 {
