@@ -547,7 +547,6 @@ form .form-fields {
 
 @media only screen and (width >= 806px) {
   :is(:is(.index main) > section):last-of-type .card {
-    background-color: #eee8aa;
     flex-direction: column;
     justify-content: space-between;
     height: 400px;
